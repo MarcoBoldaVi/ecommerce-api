@@ -1,0 +1,24 @@
+configurações iniciais: 
+instalar:
+  NodeJS
+  NPM
+  adonis
+  MySQL
+
+configurar através do VSCode>  Debug
+configurar> excessão de erro 
+ * rodar o comando > adonis make:ehandler    na pasta do projeto 
+ * configurar o arquivo Exceptions/Handler.js
+   > const Logger = use('Logger')
+   >>async report (error, { request }) {
+   >>    if(error.status >= 500){
+   >>      Logger.error(error.message, {
+   >>        stack: error.stack,
+   >>        message: error.message,
+   >>        status: error.status,
+   >>        name: error.name
+   >>      })
+   >>    }
+   >>  }
+
+
